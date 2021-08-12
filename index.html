@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Game Nave</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			font-family: arial;
+		}
+		body{
+			background-color: #1a1a1a;
+		}
+		#container{
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		#containerGame{
+			display: flex;
+			flex-direction: column;
+			box-shadow: 0px 0px 10px 10px #171717;
+			border-radius: 5px;
+			overflow: hidden;
+			z-index: 2;
+		}
+		#placar{
+			padding: 20px;
+			background: #1f1f1f;
+			display: grid;
+			grid-template-columns: 1fr auto;
+			grid-column-gap: 20px;
+			align-items: center;
+			z-index: 999999;
+		}
+		#placar #barra{
+			height: 10px;
+			background-color: #a5dafa;
+			border-radius: 5px;
+		}
+		#placar #barraVida{
+			height: 100%;
+			width: 100%;
+			background-color: #007bc2;
+			border-radius: 5px;
+		}
+		#placar #score{
+			color: white;
+			font-size: 12px;
+			font-weight: bold;
+		}
+		#placar #score img{
+			width: 12px;
+		}
+		canvas{
+			background-color: white;
+		}
+		#configuracoes{
+			padding: 10px;
+			display: flex;
+			flex-direction: column;
+			background-color: #1f1f1f;
+			color: white;
+			border-top-right-radius: 5px;
+			border-bottom-right-radius: 5px;
+			box-shadow: 0px 0px 10px 10px #171717;
+			z-index: 1;
+		}
+		#configuracoes h5{
+			margin-bottom: 10px;
+		}
+		#configuracoes label{
+			font-size: 12px;
+			margin-bottom: 5px;
+		}
+	</style>
+</head>
+<body>
+	<noscript>
+		<h2>Por favor ative o JavaScript em seu navegador!</h2>
+	</noscript>
+
+	<section id="container">
+		<main id="containerGame">
+			<div id="placar">
+				<div id="barra">
+					<div id="barraVida"></div>
+				</div>
+				<div id="score">
+					<div>
+						<img src="./IMGS/star.jpg"> <span id="scorePontos">0</span> | 
+						<img src="./IMGS/municao.png"> <span id="totalTiros">100/100</span>
+					</div>
+				</div>
+			</div>
+			<canvas width="800" height="450"></canvas>
+		</main>
+		<main id="configuracoes">
+			<h5>Configurações:</h5>
+
+			<label>Volume da música:</label>
+			<input type="range" min="0" max="10" value="10" id="volMusica">
+
+			<label>Volume do jogo:</label>
+			<input type="range" min="0" max="10" value="10" id="volJogo">
+		</main>
+	</section>
+
+	<script type="text/javascript" src="./JS/Nave.js"></script>
+	<script type="text/javascript" src="./JS/Bomba.js"></script>
+	<script type="text/javascript" src="./JS/Tiro.js"></script>
+	<script type="text/javascript" src="./JS/Explosao.js"></script>
+	<script type="text/javascript" src="./JS/script.js"></script>
+</body>
+</html>
